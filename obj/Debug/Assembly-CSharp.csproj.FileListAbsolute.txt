@@ -1,0 +1,1 @@
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
