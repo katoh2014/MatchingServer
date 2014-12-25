@@ -94,7 +94,7 @@ public abstract class Session<T>
 	// 
 	protected bool CreateThread()
 	{
-		Debug.Log("CreateThread called.");
+		Debug.Log("CreateThread called. スレッド起動処理開始");
 
 		// 受信処理のスレッド起動.
 		try
@@ -109,7 +109,7 @@ public abstract class Session<T>
 		}
 
 
-		Debug.Log("Thread launched.");
+		Debug.Log("Thread launched. スレッド起動完了");
 
 		return true;
 	}
@@ -322,7 +322,7 @@ public abstract class Session<T>
 		{
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Connect;
-			state.result = (ret) ? NetEventResult.Success : NetEventResult.Failure;
+			state.result = (ret) ? netEventResult.Success : netEventResult.Failure;
 			m_handler(node, state);
 		}
 
@@ -347,7 +347,7 @@ public abstract class Session<T>
 		{
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Disconnect;
-			state.result = NetEventResult.Success;
+			state.result = netEventResult.Success;
 			m_handler(node, state);
 		}
 

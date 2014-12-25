@@ -4,9 +4,9 @@ using System.Collections;
 public class NetConfig { 
 	public const int SERVER_VERSION = 1;
 	public const int PLAYER_MAX = 4;
-	public const int MATCING_SERVER_PORT = 50761;
-	public const int GAME_SERVER_PORT = 50762;
-	public const int GAME_PORT = 50763;
+	public const int MATCING_SERVER_PORT = 50763;
+	public const int GAME_SERVER_PORT = 50764;
+	public const int GAME_PORT = 50765;
 }
 
 public enum NetEventType {
@@ -27,6 +27,7 @@ public enum netEventResult {
 //イベントの状態を通知
 public class NetEventState {
 
+	public int 				node;	// イベントが発生したノード.
 	public NetEventType		type;	//イベントのタイプ
 	public netEventResult	result;	//イベントの結果
 }

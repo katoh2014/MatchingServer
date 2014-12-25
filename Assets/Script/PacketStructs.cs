@@ -3,9 +3,6 @@ using System;
 using System.Collections;
 using System.Net;
 
-
-
-
 public enum TransportRequest
 {
 	Connect = 0,
@@ -15,9 +12,6 @@ public enum TransportRequest
 	UserData,
 
 }
-
-
-
 
 public enum PacketId
 {
@@ -84,11 +78,11 @@ public struct PacketHeader
 //
 public struct MatchingRequest
 {
-	public int version;	// パケットID.
+	public int				 version;	// パケットID.
 	public MatchingRequestId request;	// リクエスト内容.
-	public int roomId;		// リクエスト要求ルームID.
-	public string name;		// 作成ルーム名.
-	public int level;		// レベル分けの指定.
+	public int				 roomId;		// リクエスト要求ルームID.
+	public string			 name;		// 作成ルーム名.
+	public int				 level;		// レベル分けの指定.
 
 	public const int roomNameLength = 32;	// ルーム名の長さ.
 }

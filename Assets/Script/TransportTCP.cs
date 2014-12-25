@@ -131,7 +131,7 @@ public class TransportTCP : ITransport
 			// 接続結果を通知します.
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Connect;
-			state.result = (m_isConnected == true) ? NetEventResult.Success : NetEventResult.Failure;
+			state.result = (m_isConnected == true) ? netEventResult.Success : netEventResult.Failure;
 			m_handler(this, state);
 			Debug.Log("event handler called");
 		}
@@ -156,7 +156,7 @@ public class TransportTCP : ITransport
 		{
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Disconnect;
-			state.result = NetEventResult.Success;
+			state.result = netEventResult.Success;
 			m_handler(this, state);
 		}
 	}

@@ -130,7 +130,7 @@ public class TransportUDP : ITransport
 			// 接続結果を通知します.
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Connect;
-			state.result = (m_isRequested == true) ? NetEventResult.Success : NetEventResult.Failure;
+			state.result = (m_isRequested == true) ? netEventResult.Success : netEventResult.Failure;
 			m_handler(this, state);
 			Debug.Log("event handler called");
 		}
@@ -156,7 +156,7 @@ public class TransportUDP : ITransport
 		{
 			NetEventState state = new NetEventState();
 			state.type = NetEventType.Disconnect;
-			state.result = NetEventResult.Success;
+			state.result = netEventResult.Success;
 			m_handler(this, state);
 		}
 	}
@@ -272,7 +272,7 @@ public class TransportUDP : ITransport
 			{
 				NetEventState state = new NetEventState();
 				state.type = NetEventType.Connect;
-				state.result = NetEventResult.Success;
+				state.result = netEventResult.Success;
 				m_handler(this, state);
 
 				//IPEndPoint ep = m_localEndPoint;

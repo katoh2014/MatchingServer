@@ -68,7 +68,7 @@ public class SessionTCP : Session<TransportTCP>
 			{
 				NetEventState state = new NetEventState();
 				state.type = NetEventType.Connect;
-				state.result = NetEventResult.Success;
+				state.result = netEventResult.Success;
 				m_handler(node, state);
 			}
 			Debug.Log("[TCP]Connected from client. [port:" + m_port + "]");

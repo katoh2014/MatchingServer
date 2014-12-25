@@ -7,14 +7,14 @@ using System.Runtime.InteropServices;
 public class PacketQueue{
 
 	//パケット格納情報
-	struct PaketInfo {
+	struct PacketInfo {
 		public int offset;
 		public int size;
 	}
 
 	//
 	private MemoryStream		m_streamBuffer;
-	private List<PaketInfo>		m_offsetList;
+	private List<PacketInfo>		m_offsetList;
 	private int					m_offset = 0;
 
 	private Object lockObj = new Object();
@@ -22,28 +22,26 @@ public class PacketQueue{
 	//コンストラクタ
 	public PacketQueue(){
 		m_streamBuffer = new MemoryStream();
-		m_offsetList = new List<PaketInfo>();
+		m_offsetList = new List<PacketInfo>();
 	}
 
 	//キューの追加
 	public int Enqueue(byte[] data, int size) {
 
-		PaketInfo info = new PaketInfo();
+		PacketInfo info = new PacketInfo();
 
 		info.offset = m_offset;
 		info.size = size;
-
-		lock(lockObj){
-			//パケット格納情報を保存
-			m_offsetList.Add(info);
-
-			//パケットデータを保存
-			m_streamBuffer.Position = m_offset;
-			m_streamBuffer.Write(data,0,size);
-			m_streamBuffer.Flush();
-			m_offset += size;
-		}
-
+			
+		// パケット格納情報を保存.
+		m_offsetList.Add(info);
+		
+		// パケットデータを保存.
+		m_streamBuffer.Position = m_offset;
+		m_streamBuffer.Write(data, 0, size);
+		m_streamBuffer.Flush();
+		m_offset += size;
+		
 		return size;
 	}
 
@@ -54,29 +52,25 @@ public class PacketQueue{
 
 			return -1;
 		}
-
-		int recvSize = 0;
-
-		lock(lockObj){
-			PaketInfo info = m_offsetList[0];
-
-			//バッファから該当するパケットデータを取得
-			int dataSize = Math.Min(size,info.size);
-			m_streamBuffer.Position = info.offset;
-			recvSize = m_streamBuffer.Read(buffer, 0, dataSize);
-
-			//キューデータを取り出したいので先頭要素を削除
-			if (recvSize > 0) {
-				m_offsetList.RemoveAt(0);
-			}
-
-			// すべてのキューデータを取り出したときはストリームをクリアする	
-			if (m_offsetList.Count >= 0) {
-				Clear();
-				m_offset = 0;
-			}
-
+		
+		PacketInfo info = m_offsetList[0];
+	
+		// バッファから該当するパケットデータを取得する.
+		int dataSize = Math.Min(size, info.size);
+		m_streamBuffer.Position = info.offset;
+		int recvSize = m_streamBuffer.Read(buffer, 0, dataSize);
+		
+		// キューデータを取り出したので先頭要素を削除.
+		if (recvSize > 0) {
+			m_offsetList.RemoveAt(0);
 		}
+		
+		// すべてのキューデータを取り出したときはストリームをクリアしてメモリを節約する.
+		if (m_offsetList.Count == 0) {
+			Clear();
+			m_offset = 0;
+		}
+		
 		return recvSize;
 	}
 
