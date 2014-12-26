@@ -1,1 +1,12 @@
 C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\UnityEditor.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\UnityEngine.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\nunit.framework.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\obj\Debug\Assembly-CSharp.dll
+C:\Users\katoh2014\Documents\GitHub\unity-trank\MatchingServer\obj\Debug\Assembly-CSharp.pdb

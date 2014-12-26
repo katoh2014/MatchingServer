@@ -104,7 +104,6 @@ public class Network : MonoBehaviour {
 		}
 		return true;
 	}
-
 	public void RegisterReceiveNotification(PacketId id,RecvNotifier notifier){
 		int index = (int)id;
 
@@ -144,7 +143,7 @@ public class Network : MonoBehaviour {
 			header.packetId = id;
 
 			byte[] headerData = null;
-			if (serializer.Serialize(header)) {
+			if (serializer.Serialize(header) == true) {
 				headerData = serializer.GetSerializedData();
 			}
 			byte[] packetData = packet.GetData();
@@ -157,6 +156,7 @@ public class Network : MonoBehaviour {
 
 			string str = "Send Packet[" + id + "]";
 			sendSize = m_sessionTcp.Send(node, data, data.Length);
+			Debug.Log(str);
 		}
 
 		return sendSize;
@@ -248,6 +248,7 @@ public class Network : MonoBehaviour {
 	public void RegisterEventHandler(NetEventHandler handler){
 		m_handler = handler;
 	}
+
 }
 
 

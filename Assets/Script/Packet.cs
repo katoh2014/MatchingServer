@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.IO;
-
 //
 //マッチングパケット定義
 //
@@ -69,7 +68,7 @@ public class MatchingRequestPacket : IPacket<MatchingRequest>{
 		serializer.Deserialize(ref m_packet);
 	}
 
-	public PacketId getPacketId() {
+	public PacketId GetPacketId() {
 		return PacketId.MatchingRequest;
 	}
 
@@ -85,11 +84,6 @@ public class MatchingRequestPacket : IPacket<MatchingRequest>{
 		serializer.Serialize(m_packet);
 
 		return serializer.GetSerializedData();
-	}
-
-	public PacketId GetPacketId()
-	{
-		throw new System.NotImplementedException();
 	}
 }
 

@@ -1,12 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Packet.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\IPacket.cs">
     <Files>
-      <File FileName="Assets\Script\Packet.cs" Line="1708" Column="1" />
+      <File FileName="Assets\Script\MatchingServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\MatchingServer.cs" Line="1" Column="1" />
+      <File FileName="..\TUSINSAMPL\09\MatchingServer\Assets\Scripts\MatchingServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\IPacket.cs" Line="11" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\katoh2014\Documents\GitHub\unity-trank\TUSINSAMPL\09\MatchingServer\Assets\Scripts\MatchingServer.cs" line="379" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

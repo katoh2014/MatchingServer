@@ -17,8 +17,6 @@ public class PacketQueue{
 	private List<PacketInfo>		m_offsetList;
 	private int					m_offset = 0;
 
-	private Object lockObj = new Object();
-
 	//コンストラクタ
 	public PacketQueue(){
 		m_streamBuffer = new MemoryStream();

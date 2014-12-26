@@ -224,7 +224,12 @@ public class MatchingServer : MonoBehaviour {
 	//
 	//パケット受信処理
 	//
-	
+
+	void testMatch(int i, byte[] t) {
+		string str = "ReceiveMatchingRequest:" + i;
+		Debug.Log(str);
+	}
+
 	void OnReceiveMatchingRequest(int node, byte[] data) {
 		MatchingRequestPacket packet = new MatchingRequestPacket(data);
 		MatchingRequest request = packet.GetPacket();
@@ -356,12 +361,14 @@ public class MatchingServer : MonoBehaviour {
 			m_members[node].roomId = roomId;
 
 			response.result = MatchingResult.MemberIsFull;
+			Debug.Log("MatchingResult:" + response.result);
 			for(int i = 0; i< MaxMemberNum; ++i){
 				if(room.members[i] == -1){
 					//空きがあった
 					room.members[i] = node;
 					rooms_[roomId] = room;
 					response.result = MatchingResult.Success;
+					Debug.Log("MatchingResult:" + response.result);
 					response.roomId = roomId;
 					response.name = room.name;
 					break;
