@@ -94,14 +94,14 @@ public class MatchingResponsePacket : IPacket<MatchingResponse> {
 		public bool Serialize(MatchingResponse packet) {
 			bool ret = true;
 
-			int result = (int)packet.request;
+			int result = (int)packet.result;
 			ret &= Serialize(result);
 
 			int request = (int)packet.request;
 			ret &= Serialize(request);
 
 			ret &= Serialize(packet.roomId);
-			ret &= Serialize(packet.name, MatchingRequest.roomNameLength);
+			ret &= Serialize(packet.name, MatchingResponse.roomNameLength);
 			ret &= Serialize(packet.members);
 
 			return ret;
